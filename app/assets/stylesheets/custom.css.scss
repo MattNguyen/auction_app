@@ -1,0 +1,98 @@
+@import 'compass/css3';
+@import 'compass/reset';
+@import 'compass/utilities';
+
+html {
+  overflow-y: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: url(tex2res5.png);
+}
+.row {
+  background-color: #444;
+  @include background(linear-gradient(color-stops(#333, #222)), #222);
+  @include text-shadow(#000 0 -1px 0);
+  @include box-shadow(rgba(0,0,0,1) 0 -2px -5px);
+  nav {
+    padding: 10px;
+    ul {
+      float: right;
+      li, li > a {
+        text-decoration: none;
+        display: inline;
+        color: #FFF;
+        margin-left: 5px;
+      }
+      li > a:hover {
+        color: #888;
+      }
+    }
+  }
+}
+
+
+#logo {
+  color: #FFF;
+  font-size: 22px;
+  text-decoration: none; 
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.center {
+  text-align: center;
+  border: 3px #333 solid;
+  @include border-radius(25px);
+  margin-top: 100px;
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #777;
+    padding: 30px 20px;
+    span {
+      color: #333;
+    }
+  }
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
+ .signup_form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  label {
+    display: block;
+    font-weight: bold;
+    margin: 5px;
+  }
+  input {
+    width: 250px;
+    height: 28px;
+    font-size: 1em;
+  }
+ }
+
+#create_button {
+  text-align: center;
+  display: block;
+  font-size: 2em;
+  width: 200px;
+  height: 30px;
+  margin: 10px auto;
+
+}
