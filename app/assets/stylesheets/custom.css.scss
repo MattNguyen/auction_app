@@ -22,11 +22,11 @@ body {
       li, li > a {
         text-decoration: none;
         display: inline;
-        color: #FFF;
+        color: #AAA;
         margin-left: 5px;
       }
       li > a:hover {
-        color: #888;
+        color: #FFF;
       }
     }
   }
@@ -82,8 +82,12 @@ body {
   }
   input {
     width: 250px;
-    height: 28px;
+    height: 25px;
     font-size: 1em;
+    margin-bottom: 10px;
+  }
+  .new_user {
+    margin-bottom: 10px;
   }
  }
 
@@ -93,6 +97,21 @@ body {
   font-size: 2em;
   width: 200px;
   height: 30px;
-  margin: 10px auto;
+  margin: 0 auto;
+}
 
+#signin_button {
+  text-align: center;
+  display: block;
+  font-size: 2em;
+  width: 200px;
+  height: 30px;
+  margin: 30px auto;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
 }

@@ -1,0 +1,21 @@
+<%= provide(:title, "Sign in") %>
+
+<div class="eight columns offset-by-four">
+  <div class="center signup">
+    <h1>Sign in</h1>
+    <div class="signup_form">
+      <%= form_for(:session, url: sessions_path) do |f| %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.submit "Sign in", id: 'signin_button' %>
+      <% end %>
+
+      <p style="margin-bottom:15px">New user? <%= link_to 'Sign up now', signup_path %></p>
+    </div>
+  </div>
+</div>
