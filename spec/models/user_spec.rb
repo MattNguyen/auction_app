@@ -15,7 +15,7 @@ describe User do
   before { @user = User.new(name: "Matt Nguyen", email: "user@example.com", 
                             password: "foobar", password_confirmation: "foobar") }
 
-  subject {@user}
+  subject { @user }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }

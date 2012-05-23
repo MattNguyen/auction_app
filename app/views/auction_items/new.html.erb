@@ -1,0 +1,25 @@
+<%= provide(:title, 'New Item') %>
+
+<div class="eight columns offset-by-four">
+  <div class="center signup">
+  <h1>New Item</h1>
+    <div class="signup_form">
+      <%= form_for(@auctionitem) do |f| %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.label :start_date %>
+        <%= f.date_select :start_date %>
+
+        <%= f.label :end_date %>
+        <%= f.date_select :end_date %>
+
+        <%= f.label :description %>
+        <%= f.text_area :description %> <br>
+
+        <%= f.submit "Create new item", id: 'create_item_button' %>
+      <% end %>
+    </div>
+  </div>
+</div>

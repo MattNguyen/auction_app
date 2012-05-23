@@ -1,12 +1,14 @@
 AuctionApp::Application.routes.draw do
-  get "sessions/create"
 
-  get "sessions/destroy"
-
+  resources :auction_items
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  
   root to: 'static_pages#home'
   
+  match '/auctionitems', to: 'auction_items#index'
+  match '/newauctionitems', to: 'auction_items#new'
+
   match '/signup', to: 'users#new'
 
   match '/signin', to: 'sessions#new'

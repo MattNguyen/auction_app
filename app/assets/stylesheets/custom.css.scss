@@ -7,6 +7,10 @@ html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
 body {
   background: url(tex2res5.png);
 }
@@ -91,22 +95,23 @@ body {
   }
  }
 
-#create_button {
-  text-align: center;
-  display: block;
-  font-size: 2em;
-  width: 200px;
-  height: 30px;
-  margin: 0 auto;
+select {
+  margin-bottom: 10px;
+  font-size: 1em;
 }
 
-#signin_button {
+textarea {
+  margin-bottom: 10px;
+}
+
+#signin_button, #create_button, #create_item_button {
   text-align: center;
   display: block;
   font-size: 2em;
-  width: 200px;
+  width: 150px;
   height: 30px;
-  margin: 30px auto;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .debug_dump {
@@ -114,4 +119,107 @@ body {
   float: left;
   width: 100%;
   margin-top: 45px;
+}
+
+nav.user_home_nav {
+  margin-bottom: 20px;
+}
+
+section.user_auctions {
+  overflow: auto;
+}
+.auction_pages {
+  width: 200px;
+  border: 1px solid #000;
+  background: #555;
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+.auction_page {
+  height: 200px;
+  width: 150px;
+  border: 1px solid #000;
+  margin: 20px auto;
+  background: #fff;
+}
+
+.page_text {
+  margin: auto auto;
+}
+
+#new_auction_link {
+  background: #FFF;
+  color: #444;
+  border-radius: 15px;
+  text-decoration: none;
+  margin: 5px 5px;
+  border: 3px solid #000;
+  padding: 3px 5px;
+  float: right;
+}
+
+#new_auction_link:hover {
+  background: #1CFFB8;
+  color: #000;
+}
+
+section.main_auction {
+  width: 720px;
+  height: 750px;
+  float: right;
+  border: 5px solid #000;
+  border-radius: 10px;
+  background: #FFF;
+  display: inline;
+}
+
+section.photos {
+  width: 450px;
+  height: 477px;
+  border: 1px dashed #000;
+  margin: 10px;
+  background: #444;
+  display: inline-block;
+}
+
+section.auction_info {
+  width: 230px;
+  float: right;
+  display: inline-block;
+  border: 1px dashed #000;
+  margin: 10px 10px 10px 0;
+}
+.main_picture {
+  text-align: center;
+  width: 450px;
+  height: 400px;
+  border-bottom: 1px solid #ccc;
+}
+
+.thumbnail {
+  width: 75px;
+  height: 75px;
+  border: 1px dashed #ccc;
+  display: inline-block;
+}
+
+h2.item_name {
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+}  
+
+section.main_info {
+  margin: 10px 10px;
+}
+
+nav.info_nav {
+  background: black;
+}
+
+nav.info_nav ul li {
+  display: inline;
+  list-style-type: none; 
 }

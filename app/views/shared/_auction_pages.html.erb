@@ -1,0 +1,5 @@
+<% if @auction_items.any? %>
+  <div class="auction_pages">
+    <%= render partial: 'shared/auction_item', collection: @auction_items %>
+  </div>
+<% end %>
