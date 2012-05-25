@@ -114,6 +114,11 @@ textarea {
   margin-bottom: 10px;
 }
 
+#create_item_button {
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .debug_dump {
   clear: both;
   float: left;
@@ -123,6 +128,10 @@ textarea {
 
 nav.user_home_nav {
   margin-bottom: 20px;
+}
+
+nav.user_home_nav h1 {
+  display: inline-block;
 }
 
 section.user_auctions {
@@ -176,8 +185,8 @@ section.main_auction {
 }
 
 section.photos {
-  width: 450px;
-  height: 477px;
+  width: 420px;
+  height: 400px;
   border: 1px dashed #000;
   margin: 10px;
   background: #444;
@@ -185,7 +194,7 @@ section.photos {
 }
 
 section.auction_info {
-  width: 230px;
+  width: 260px;
   float: right;
   display: inline-block;
   border: 1px dashed #000;
@@ -193,8 +202,8 @@ section.auction_info {
 }
 .main_picture {
   text-align: center;
-  width: 450px;
-  height: 400px;
+  width: 420px;
+  height: 320px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -208,8 +217,21 @@ section.auction_info {
 h2.item_name {
   color: #000;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
+  line-height: 20px;
+  margin-bottom: 20px;
 }  
+
+h3.end_date {
+  color: #000;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+span.item_values {
+  font-weight: bold;
+}
 
 section.main_info {
   margin: 10px 10px;
@@ -218,4 +240,16 @@ section.main_info {
 nav.info_nav ul li {
   display: inline;
   list-style-type: none; 
+}
+
+h2.no_auction_message {
+  text-align: center;
+  display: inline-block;
+  margin-left: 280px;
+}
+
+canvas#new_auction_arrow {
+  border: 1px dashed #000;
+  width: 150px;
+  height: 120px; 
 }

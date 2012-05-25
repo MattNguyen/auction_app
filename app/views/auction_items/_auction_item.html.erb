@@ -1,0 +1,7 @@
+<% if current_user?(auction_item.user) %>
+    <%= link_to "Delete", auction_item, method:  :delete,
+                                       confirm:  "You sure?",
+                                         title:   auction_item.name, 
+                                            id:   'new_auction_link'%>
+
+<% end %>

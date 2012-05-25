@@ -5,56 +5,22 @@
   <nav class="user_home_nav">
     <h1>
       <%= current_user.name %>
-
-      <span id="new_auction_link_outter" style="font-size: 14px;"><%= link_to 'New Auction', newauctionitems_path, id: 'new_auction_link' %></span>
     </h1>
+    <%= render @auction_items %>
+    <%= link_to 'New Auction', newauctionitems_path, id: 'new_auction_link' %>
   </nav>
 
-  <section class="user_auctions">
+  <% if @auction_items.any? %>
 
-    <%= render 'shared/auction_pages' %>
-
-    <section class="main_auction">
-
-      <section class="photos">
-        <div class="main_picture">
-            <p style="text-align: center; color: #ccc;">Sample picture</p>
-        </div>
-        <div class="thumbnails">
-          <div class="thumbnail">
-            <p style="text-align: center; color: #ccc;">Sample thumb</p>
-          </div>
-          <div class="thumbnail">
-            <p style="text-align: center; color: #ccc;">Sample thumb</p>
-          </div>
-          <div class="thumbnail">
-            <p style="text-align: center; color: #ccc;">Sample thumb</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="auction_info">
-        <h2 class="item_name">This will be the name of the item</h2>
-      </section>
-
-      <section class="main_info">
-        <nav class="info_nav">
-          <ul class="tabs">
-            <li><a href="#tab1">Description</a></li>
-            <li><a href="#tab2">Bidders</a></li>
-          </ul>
-
-          <div id="tab1">
-            <p>This is a description</p>
-          </div>
-          <div id="tab2">
-            <p>These are the bidders</p>
-          </div>
-        </nav>
-      </section>  
+    <section class="user_auctions">
+      <%= render 'shared/auction_pages' %>
+      <%= render 'shared/main_auction' %>
     </section>
-  </section>
 
+  <% else %>
+    <h2 class="no_auction_message">Click this thing to start your auction!</h2>
+    <canvas id="new_auction_arrow"></canvas>
+  <% end -%>
 <% else %>
 
   <div class="eight columns offset-by-four">
