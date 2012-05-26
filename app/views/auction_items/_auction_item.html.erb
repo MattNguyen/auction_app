@@ -1,4 +1,4 @@
-<% if current_user?(auction_item.user) %>
+<% if current_user?(auction_item.user(params[:id])) %>
     <%= link_to "Delete", auction_item, method:  :delete,
                                        confirm:  "You sure?",
                                          title:   auction_item.name, 

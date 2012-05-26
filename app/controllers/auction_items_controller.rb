@@ -8,7 +8,6 @@ class AuctionItemsController < ApplicationController
   def show
     @auction_items = current_user.auction_pages.all
     @auctionitem = AuctionItem.find_by_id(params[:id])
-    render 'static_pages/home'
   end
 
   def new

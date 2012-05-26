@@ -1,0 +1,45 @@
+<%= render @auction_items %>
+
+<section class="main_auction">
+
+  <section class="photos">
+    <div class="main_picture">
+        <p style="text-align: center; color: #ccc;">Sample picture</p>
+    </div>
+    <div class="thumbnails">
+      <div class="thumbnail">
+        <p style="text-align: center; color: #ccc;">Sample thumb</p>
+      </div>
+      <div class="thumbnail">
+        <p style="text-align: center; color: #ccc;">Sample thumb</p>
+      </div>
+      <div class="thumbnail">
+        <p style="text-align: center; color: #ccc;">Sample thumb</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="auction_info">
+    <h2 class="item_name"><%= @auctionitem.name %></h2>
+
+    <h3 class="end_date">End Date:  <span class="item_values"><%= @auctionitem.end_date %></span></h3>
+
+    <h3 class="current_bid">Current bid:  <span class="item_values">$100000000</span></h3>
+  </section>
+
+  <section class="main_info">
+    <nav class="info_nav">
+      <ul class="tabs">
+        <li><a href="#tab1">Description</a></li>
+        <li><a href="#tab2">Bidders</a></li>
+      </ul>
+
+      <div id="tab1">
+        <p><%= @auctionitem.description %></p>
+      </div>
+      <div id="tab2">
+        <p>These are the bidders</p>
+      </div>
+    </nav>
+  </section>  
+</section>

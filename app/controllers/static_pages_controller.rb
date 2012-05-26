@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
     if signed_in?
       @auctionitem = AuctionItem.first # THIS NEEDS TO CHANGE!!!!
       @auction_items = current_user.auction_pages.all
-    end        
+    end
   end
 
   def help

@@ -1,0 +1,48 @@
+<div id="tabs" id="myTab">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#signin" data-toggle="tab">Sign in</a></li>
+    <li><a href="#signup" data-toggle="tab">Sign up</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="signin">
+      <div class="form-vertical">
+          <%= form_for(:session, url: sessions_path) do |f| %>
+
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+
+            <%= f.submit "Sign in", class: 'btn btn-primary btn-small' %>
+          <% end %>
+        </div>
+      </div>
+    <div class="tab-pane" id="signup">
+      <div class="form-vertical">
+        <%= form_for(:user, url: signup_path) do |f| %>
+
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+
+          <%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.password_field :password_confirmation %> <br>
+
+          <%= f.submit "Create my account", class: 'btn btn-primary btn-small' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<script>
+  $(document).ready(function () {
+    $('#myTab a[href="#signin"]).tab('show');
+  })
+</script>

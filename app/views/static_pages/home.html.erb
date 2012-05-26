@@ -6,16 +6,13 @@
     <h1>
       <%= current_user.name %>
     </h1>
-    <%= render @auction_items %>
+    
     <%= link_to 'New Auction', newauctionitems_path, id: 'new_auction_link' %>
   </nav>
 
   <% if @auction_items.any? %>
 
-    <section class="user_auctions">
       <%= render 'shared/auction_pages' %>
-      <%= render 'shared/main_auction' %>
-    </section>
 
   <% else %>
     <h2 class="no_auction_message">Click this thing to start your auction!</h2>
@@ -23,10 +20,21 @@
   <% end -%>
 <% else %>
 
-  <div class="eight columns offset-by-four">
-    <div class="center">
-      <h1>Want to host your own private auction?<br><span>Sign up for beta now.</span></h1>
+  <div class="container center_piece">
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          <section class="hero">
+            <h1>Want to host your own private auction?<br><span>Sign up for beta now.</span></h1>
+            <%= image_tag("samplehero.jpeg", alt: "samplehero") %>
+          </section>
+        </div>
+        <div class="span4 pull-right">
+          <section class="signup-in">
+            <%= render 'shared/sign_in_up_tabs' %>
+          </section>
+        </div>
+      </div>
     </div>
   </div>
-
 <% end %>
