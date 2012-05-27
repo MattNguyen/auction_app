@@ -1,40 +1,66 @@
 <%= provide(:title, '') %>
 
-<% if signed_in? %>
+  <% if signed_in? %>
+    <%= render 'shared/update_feed' %>
 
-  <nav class="user_home_nav">
-    <h1>
-      <%= current_user.name %>
-    </h1>
-    
-    <%= link_to 'New Auction', newauctionitems_path, id: 'new_auction_link' %>
-  </nav>
-
-  <% if @auction_items.any? %>
-
-      <%= render 'shared/auction_pages' %>
-
-  <% else %>
-    <h2 class="no_auction_message">Click this thing to start your auction!</h2>
-    <canvas id="new_auction_arrow"></canvas>
-  <% end -%>
-<% else %>
-
-  <div class="container center_piece">
-    <div class="container">
+    <div class="container main_content">
       <div class="row">
-        <div class="span8">
-          <section class="hero">
-            <h1>Want to host your own private auction?<br><span>Sign up for beta now.</span></h1>
-            <%= image_tag("samplehero.jpeg", alt: "samplehero") %>
-          </section>
+        <div class="span3">
+
+          <h2 style="line-height: 1em;">
+            Hi, <br>
+            <%= current_user.name %>!
+          </h2>
+      
+
+          <ul class="nav nav-list">
+            <li class="nav-header">Favorites</li>
+            <li class="active">
+              <%= link_to root_path do %>
+                <i class="icon-home"></i>  Home
+              <% end -%>
+            </li>
+            <li>
+              <%= link_to user_path(current_user) do %>
+                <i class="icon-user"></i>  Profile
+              <% end -%>
+            </li>
+            <li>
+              <%= link_to auctionitems_path do %>
+                <i class="icon-time"></i>  History
+              <% end -%>
+            </li>
+          </ul>
         </div>
-        <div class="span4 pull-right">
-          <section class="signup-in">
-            <%= render 'shared/sign_in_up_tabs' %>
-          </section>
+        <div class="span9">
+          <!-- # <%= link_to 'New Auction', newauctionitems_path, class: 'btn btn-primary btn-small pull-right' %> -->
+
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">All</a></li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">Buy</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+
+  <% else %>
+
+    <div class="container center_piece">
+      <div class="container">
+        <div class="row">
+          <div class="span8">
+            <section class="hero">
+              <h1>Want to host your own private auction?<br><span>Sign up for beta now.</span></h1>
+              <%= image_tag("samplehero.jpeg", alt: "samplehero") %>
+            </section>
+          </div>
+          <div class="span4 pull-right">
+            <section class="signup-in">
+              <%= render 'shared/sign_in_up_tabs' %>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>

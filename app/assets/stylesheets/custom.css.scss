@@ -27,6 +27,7 @@ textarea {
 /* Header/Navbar */
 
 .navbar {
+  position: fixed;
   .navbar-inner {
     @include box-shadow(#999 1px 1px 8px);
     background: $white;
@@ -53,7 +54,7 @@ textarea {
   }
 }
 
-/* Home Page Not Signed In */
+/* Home Page - Not Signed In */
 
 .container.center_piece {
   background: url(groovepaper.png) repeat;
@@ -85,6 +86,70 @@ textarea {
     padding: 20px;
     .form-vertical {
       margin-top: 10px;
+    }
+  }
+}
+
+/* Home Page - Signed In*/
+
+.container.background_pattern {
+  background: url(darkdenim3.png) repeat;
+  width: auto;
+  position: relative;
+  @include box-shadow(#333 0 -1px 15px inset, #333 0 1px 15px inset);
+  section.update_feed {
+    background: url(groovepaper.png) repeat;
+    width: auto;
+    height: 160px;
+    overflow: hidden;
+    @include box-shadow(#555 1px 1px 15px inset, #555 -1px -1px 15px -3px inset);
+    border-radius: 8px;
+    ul.thumbnails {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      margin-top: 10px;
+      margin-left: 0px;
+    }
+  }
+}
+
+#hide_show_feed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-top: -10px;
+  img#navup, img#navdown{
+    @include opacity(0.7);
+    overflow: visible;
+  }
+  img#navdown {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    visibility: hidden;
+  }
+  img#navup {
+    position: absolute; 
+    left: 0px;
+    top: 0px;
+  }
+  img#navup:hover, img#navdown:hover {
+    @include opacity(0.9);
+  }
+}
+
+.container.main_content {
+  margin: 30px auto;
+  ul.nav.nav-list {
+    margin-top: 15px;
+    border: 1px solid #777;
+    border-radius: 12px;
+    padding: 10px;
+    li.active > a:hover {
+      color: white;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+      background-color: #08C;
     }
   }
 }
