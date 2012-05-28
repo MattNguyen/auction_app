@@ -1,9 +1,9 @@
 <%= provide(:title, "Sign in") %>
 
-<div class="eight columns offset-by-four">
-  <div class="center signup">
-    <h1>Sign in</h1>
-    <div class="signup_form">
+<div class="container cont-top">
+  <div class="row">
+    <div class="span4 offset4">
+      <h1 style>Sign in</h1><br>
       <%= form_for(:session, url: sessions_path) do |f| %>
 
         <%= f.label :email %>
@@ -12,10 +12,10 @@
         <%= f.label :password %>
         <%= f.password_field :password %>
 
-        <%= f.submit "Sign in", id: 'signin_button' %>
+        <%= f.submit "Sign in", class: 'btn btn-primary btn-small' %>
       <% end %>
 
-      <p style="margin-bottom:15px">New user? <%= link_to 'Sign up now', signup_path %></p>
+      <p style="margin-bottom:30px">New user? <%= link_to 'Sign up now', signup_path %></p>
     </div>
   </div>
 </div>

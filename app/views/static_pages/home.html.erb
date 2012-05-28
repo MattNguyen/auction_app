@@ -5,9 +5,9 @@
 
     <div class="container main_content">
       <div class="row">
-        <div class="span3">
+        <div class="span3 right-border">
 
-          <h2 style="line-height: 1em;">
+          <h2 id="user_greeting">
             Hi, <br>
             <%= current_user.name %>!
           </h2>
@@ -32,9 +32,8 @@
             </li>
           </ul>
         </div>
-        <div class="span9">
-          <!-- # <%= link_to 'New Auction', newauctionitems_path, class: 'btn btn-primary btn-small pull-right' %> -->
-
+        <div class="span9 no_left_margin">
+          <%= link_to 'New Auction', newauctionitems_path, class: 'btn btn-primary btn-small' %>
           <ul class="nav nav-pills pull-right">
             <li class="active"><a href="#">All</a></li>
             <li><a href="#">Sell</a></li>

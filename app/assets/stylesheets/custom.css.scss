@@ -6,6 +6,12 @@ $black: #000000;
 $darkBlue: #339bb9;
 $darkestBlue: #257085;
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* Universal */
 
 html {
@@ -16,20 +22,57 @@ body {
   padding-top: 51px;
 }
 
-section {
-  overflow: auto;
-}
-
 textarea {
   resize: vertical;
 }
 
+.center {
+  text-align: center;
+}
+
+.cont-top {
+  margin-top: 30px;
+}
+
+/* Forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 100px;
+  @include box_sizing;
+}
+
+/* Error messages */
+
+.error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
 /* Header/Navbar */
 
-.navbar {
+header.navbar {
   position: fixed;
-  .navbar-inner {
-    @include box-shadow(#999 1px 1px 8px);
+  .navbar-inner.header {
+    @include box-shadow(#999 0 1px 8px);
     background: $white;
     height: 50px;
     .container {
@@ -38,6 +81,7 @@ textarea {
     a.brand {
       color: #555;
       font-size: 28px;
+      @include text-shadow(#888 -2px 1px 5px);
     }
     a.brand:hover {
       color: #000;
@@ -54,11 +98,29 @@ textarea {
   }
 }
 
+/* Footer */
+.navbar-inner {
+  background-color: white;
+  border-top: 1px solid #ccc;
+  @include box-shadow(#000 0 0 0);
+  .brand.footer {
+    color: #666;
+  }
+  a.brand:hover {
+    color: #555;
+  }
+  nav ul.nav.pull-right li a {
+    color: #777;
+  }
+  nav ul.nav.pull-right li a:hover {
+    color: #333;
+  }
+}
 /* Home Page - Not Signed In */
 
 .container.center_piece {
   background: url(groovepaper.png) repeat;
-  width: auto;
+  width: 100%;
   height: 367px;
   margin-bottom: 100px;
   border-bottom: 1px solid #ddd;
@@ -94,15 +156,15 @@ textarea {
 
 .container.background_pattern {
   background: url(darkdenim3.png) repeat;
-  width: auto;
+  width: 100%;
   position: relative;
   @include box-shadow(#333 0 -1px 15px inset, #333 0 1px 15px inset);
   section.update_feed {
     background: url(groovepaper.png) repeat;
-    width: auto;
-    height: 160px;
+    height: 130px;
+    width: 100%;
     overflow: hidden;
-    @include box-shadow(#555 1px 1px 15px inset, #555 -1px -1px 15px -3px inset);
+    @include box-shadow(#666 2px 2px 15px inset, #666 -2px -2px 15px -3px inset);
     border-radius: 8px;
     ul.thumbnails {
       display: inline-block;
@@ -110,14 +172,20 @@ textarea {
       overflow: hidden;
       margin-top: 10px;
       margin-left: 0px;
+      width: 100%;
+      li.span2 {
+        margin: 0 10px;
+        a {
+          margin-bottom: 5px;
+        }
+      }
     }
   }
 }
 
 #hide_show_feed {
-  position: relative;
+  position: absolute;
   left: 50%;
-  right: 50%;
   margin-top: -10px;
   img#navup, img#navdown{
     @include opacity(0.7);
@@ -139,11 +207,23 @@ textarea {
   }
 }
 
+
 .container.main_content {
   margin: 30px auto;
+  overflow: hidden;  
+  .right-border {
+    border-right: 1px solid #bbb;
+  }
+  #user_greeting {
+    line-height: 1em;
+    color: $darkestBlue;
+  }
+  .no_left_margin {
+    margin-left: 0;
+    padding-left: 10px;
+  }
   ul.nav.nav-list {
     margin-top: 15px;
-    border: 1px solid #777;
     border-radius: 12px;
     padding: 10px;
     li.active > a:hover {
